@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Backbone/Marionette basic setup with nested views</title>
+    <script data-main="js/main" src="../../bower_components/requirejs/require.js"></script>
+    <style type="text/css">
+        body {
+            background: #ffffff;
+        }
+
+        #AppBase {
+            width: 700px;
+            margin: 10px auto;
+            padding: 0;
+            outline: 1px solid #808080;
+        }
+
+        #AppContainer {
+            width: 400px;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            border-bottom: 1px solid #808080;
+            width: 700px;
+
+        }
+
+        ul {
+            margin: 1em 0 0 0;
+            padding: 0;
+            list-style-type: none;
+            width: 700px;
+        }
+
+        li {
+            margin-bottom: .5em;
+            padding: 0 0 .5em 1em;
+            border-bottom: 1px solid #dedede;
+        }
+
+        #regionOne {
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+<!-- Base element for app -->
+<!--
+    Dont use the BODY element as the base because when the app renders in the BODY
+    it will wipe out the template files before the views can pick them up
+-->
+<div id="AppBase" style="width:700px"></div>
+
+<!-- TEMPLATES -->
+<!-- main layout template -->
+<script type="text/template" id="layout-template">
+    <h1>Demo</h1>
+    <div id="regionOne"/>
+    <div id="regionTwo"/>
+</script>
+
+<!-- bookItemView template -->
+<!-- This used the Underscore templating system, which is built into Marionette.js -->
+<script type="text/template" id="itemView-template">
+    <!--
+            <span><b>Title</b>: <%- title %></span><br/>
+            <span><b>Author</b>: <%- authorLast %>, <%- authorFirst %></span>
+    -->
+    <span name="sortOrder"/>
+    <p>
+        <button class="moveUp">^</button>
+        <span><b>Title</b>: <span name="title"/></span><br/>
+        <button class="moveDown">v</button>
+        <span><b>Author</b>: <span name="authorLast"/>, <span name="authorFirst"/></span>
+
+</script>
+
+<script type="text/template" id="itemEdit-template">
+    <!--
+            <span><b>Title</b>: <%- title %></span><br/>
+            <span><b>Author</b>: <%- authorLast %>, <%- authorFirst %></span>
+    -->
+    <span name="sortOrder"/>
+    <p>
+        <button class="moveUp">^</button>
+        <span><b>Title</b>: <input type="text" name="title"/></span><br/>
+        <button class="moveDown">v</button>
+        <span><b>Author</b>: <input type="text" name="authorLast"/>, <input type="text" name="authorFirst"/></span>
+
+</script>
+
+<script type="text/x-handlebars-template" id="hitemView-template">
+    <!--
+            <span><b>Title</b>: <%- title %></span><br/>
+            <span><b>Author</b>: <%- authorLast %>, <%- authorFirst %></span>
+    -->
+    <span name="sortOrder"/>
+    <p>
+        <button class="moveUp">^</button>
+        <span><b>Title</b>: <span name="title"/></span><br/>
+        <button class="moveDown">v</button>
+        <span><b>Author</b>: <span name="authorLast"/>, <span name="authorFirst"/></span>
+    <p>
+        <span><b>Full Name</b>: <span name="fullName"/> </span>
+
+
+</script>
+
+<script type="text/x-handlebars-template" id="hitemEdit-template">
+    <!--
+            <span><b>Title</b>: <%- title %></span><br/>
+            <span><b>Author</b>: <%- authorLast %>, <%- authorFirst %></span>
+    -->
+    <span name="sortOrder"/>
+    <p>
+        <button class="moveUp">^</button>
+        <span><b>Title</b>: <input type="text" name="title"/></span><br/>
+        <button class="moveDown">v</button>
+        <span><b>Author</b>: <input type="text" name="authorLast"/>, <input type="text" name="authorFirst"/></span>
+    <p>
+        <span><b>Full Name</b>: <span name="fullName"/> </span>
+
+</script>
+
+<script type="text/template" id="itemView-template2">
+    <td><%= authorFirst %></td><td><%= authorLast %></td>
+</script>
+</body>
+</html>

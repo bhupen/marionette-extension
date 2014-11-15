@@ -1,0 +1,29 @@
+{
+  "name": "marionette.extension",
+  "description": "Extension for backbone and marionette to provide automatic Model to View Template binding and fast object eventing framework.",
+  "version": "1.0.1",
+  "author": {
+    "name": "Bhupen Khanolkar",
+    "email": "bhupenk@gmail.com"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-blanket-mocha": "^0.4.0",
+    "grunt-concurrent": "^0.5.0",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-jsbeautifier": "0.2.2",
+    "grunt-open": "~0.2.2",
+    "grunt-saucelabs": "^5.1.2",
+    "grunt-version": "0.2.2",
+    "jit-grunt": "^0.8.0",
+    "jquery": "^2.1.0",
+    "mocha-unfunk-reporter": "~0.4.0",
+    "node-static": "*"
+  },
+  "dependencies": {
+    "backbone": "~1.1.0",
+    "underscore": "^1.6.0"
+  }
+}
