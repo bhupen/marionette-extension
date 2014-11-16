@@ -504,5 +504,5 @@
                 })
             }), d && (this.context.parentContext = d))
         }
-    }(), {Context: i, ViewBinder: c.ViewBinder}
+    }(), {addContextSyncEvents: i.addContextSyncEvents, setDebug: i.setDebug}
 });

@@ -41,7 +41,7 @@ require(
 
         var app = new Backbone.Marionette.Application();        // create a new instance of the Marionette app
 
-        Extension.Context.setDebug(true);                       // debug Extension Context not require during deployment
+        Extension.setDebug(true);                       // debug Extension Context not require during deployment
 
         app.addRegions({                                        // add the initial region which will contain the app
             appRegion: '#AppBase'                               // reference to container element in the HTML file
@@ -159,7 +159,7 @@ require(
 
                 initialize: function (options) {
                     this.stuff = options.stuff;
-                    Extension.Context.addContextSyncEvents(this, {                        // Manually define message that this object will handle.
+                    Extension.addContextSyncEvents(this, {                        // Manually define message that this object will handle.
                         "updateView" : function () {
                             console.log('Received update view in CONTROLLER.' );
                         }
